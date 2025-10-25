@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
@@ -35,7 +35,7 @@ jobs:
       - name: Upload build output
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: out   # <- ESTA es la carpeta que Vite genera (lo vimos en tu log)
 
   deploy:
     needs: build

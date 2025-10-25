@@ -1,0 +1,231 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Familias por la Navidad - Evento ICT</title>
+    <meta name="description" content="Únete a la celebración navideña familiar más especial de San Salvador. Evento gratuito el 7 de diciembre en Auditorio FEPADE." />
+    <meta name="keywords" content="navidad, familia, evento, San Salvador, ICT, celebración, niños" />
+    
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+{
+  "name": "react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "i18next": "^25.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^15.6.0",
+    "react-router-dom": "^7.6.3",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "firebase": "12.0.0",
+    "@supabase/supabase-js": "2.57.4",
+    "@stripe/react-stripe-js": "4.0.2",
+    "recharts": "3.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.3",
+    "unplugin-auto-import": "^19.3.0",
+     "source-map": "^0.7.6"
+  }
+}
+
+export default {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    }
+  }
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  }
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src"]
+}
+
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["vite.config.ts"]
+}
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import { resolve } from 'node:path'
+import AutoImport from 'unplugin-auto-import/vite'
+
+const base = process.env.BASE_PATH || '/'
+const isPreview = process.env.IS_PREVIEW  ? true : false;
+// https://vite.dev/config/
+export default defineConfig({
+  define: {
+   __BASE_PATH__: JSON.stringify(base),
+   __IS_PREVIEW__: JSON.stringify(isPreview)
+  },
+  plugins: [react(),
+    AutoImport({
+      imports: [
+        {
+          'react': [
+            'React',
+            'useState',
+            'useEffect',
+            'useContext',
+            'useReducer',
+            'useCallback',
+            'useMemo',
+            'useRef',
+            'useImperativeHandle',
+            'useLayoutEffect',
+            'useDebugValue',
+            'useDeferredValue',
+            'useId',
+            'useInsertionEffect',
+            'useSyncExternalStore',
+            'useTransition',
+            'startTransition',
+            'lazy',
+            'memo',
+            'forwardRef',
+            'createContext',
+            'createElement',
+            'cloneElement',
+            'isValidElement'
+          ]
+        },
+        {
+          'react-router-dom': [
+            'useNavigate',
+            'useLocation',
+            'useParams',
+            'useSearchParams',
+            'Link',
+            'NavLink',
+            'Navigate',
+            'Outlet'
+          ]
+        },
+        // React i18n
+        {
+          'react-i18next': [
+            'useTranslation',
+            'Trans'
+          ]
+        }
+      ],
+      dts: true,
+    }),
+  ],
+  base,
+  build: {
+    sourcemap: true,
+    outDir: 'out',
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
+  },
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+  }
+})

@@ -78,7 +78,7 @@ export default function Home() {
     }
 
     try {
-     const response = await fetch('https://script.google.com/macros/s/AKfycbzud-OhgHKJ9XRbTKOlcYvm3DpApqyRyJMsPv3Kl00uaX70pazLOupGl7txxBpJg6ty/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbyKBEXXItKU7gLIEnjQzO3r-Enl_UmbU8xZAjSIc3QMFzZOKGDL-W7NSCwiV5kj_r4-/exec', {
   method: 'POST',
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   body: new URLSearchParams({

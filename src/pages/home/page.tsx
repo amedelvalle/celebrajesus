@@ -594,10 +594,8 @@ export default function Home() {
             
             <div className="border-t border-red-800 pt-4">
               <p className="text-sm text-red-300">
-                © 2024 Familias por la Navidad - Evento ICT. Todos los derechos reservados. | 
-                <a href="https://readdy.ai/?origin=logo" className="hover:text-white ml-1 cursor-pointer">
-                  Powered by Readdy
-                </a>
+                © 2024 Familias por la Navidad - Evento ICT. Todos los derechos reservados.         
+                 </a>
               </p>
             </div>
           </div>

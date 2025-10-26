@@ -78,22 +78,20 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('https://readdy.ai/api/form/d3tupkpmvqr06es2pqeg', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          nombre: formData.nombre.trim(),
-          apellido: formData.apellido.trim(),
-          email: formData.email.trim().toLowerCase(),
-          telefono: formData.telefono.trim(),
-          ciudadResidencia: formData.ciudadResidencia,
-          numeroFamiliares: formData.numeroFamiliares,
-          edadNinos: formData.edadNinos.trim(),
-          comentarios: formData.comentarios.trim()
-        })
-      });
+     const response = await fetch('https://script.google.com/macros/s/AKfycbzud-OhgHKJ9XRbTKOlcYvm3DpApqyRyJMsPv3Kl00uaX70pazLOupGl7txxBpJg6ty/exec', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: new URLSearchParams({
+    nombre: formData.nombre.trim(),
+    apellido: formData.apellido.trim(),
+    email: formData.email.trim(),
+    telefono: formData.telefono.trim(),
+    ciudadResidencia: formData.ciudadResidencia,
+    numeroFamiliares: formData.numeroFamiliares,
+    edadNinos: formData.edadNinos.trim(),
+    comentarios: formData.comentarios.trim()
+  })
+});
 
       if (response.ok) {
         setIsRegistered(true);

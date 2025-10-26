@@ -595,8 +595,7 @@ export default function Home() {
             <div className="border-t border-red-800 pt-4">
               <p className="text-sm text-red-300">
                 © 2024 Familias por la Navidad - Evento ICT. Todos los derechos reservados.         
-                 </a>
-              </p>
+                </p>
             </div>
           </div>
         </div>
